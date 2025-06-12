@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Estudiante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/imagenes/SOLO CÓDIGO.png" alt="Logo del sitio">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Hola, soy Clara A. Agüero</h1>
+                <p>Estudiante de desarrollo web. Apasionada por el diseño UI/UX y la programación frontend, creando experiencias digitales innovadoras.</p>
+                <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
+            </div>
+        </section>
+
+        <section id="perfil" class="section-container">
+            <h2 class="section-title">Mi Perfil</h2>
+            <div class="perfil-overview">
+                <img src="/imagenes/fotoperfil.jpg" alt="Foto personal" class="foto-personal">
+                <div class="datos">
+                    <h2>Clara A. Agüero</h2>
+                    <p>Estudiante de desarrollo web. Apasionada por el diseño UI/UX y la programación frontend.</p>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Información Personal</h3>
+                    <p><strong>Email:</strong> claraagv54@gmail.com</p>
+                    <p><strong>Teléfono:</strong> +54 342 522 4397</p>
+                    <p><strong>Ubicación:</strong> Santa Fe, Argentina</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Información Profesional</h3>
+                    <p>Formada en tecnologías web, con conocimientos sólidos en HTML, CSS, JavaScript y herramientas modernas de desarrollo frontend. Busco constantemente nuevas oportunidades para aplicar y expandir mis habilidades en entornos dinámicos y colaborativos.</p>
+                </div>
+
+                <div class="info-box full-width">
+                    <h3>Habilidades Técnicas</h3>
+                    <ul class="tech-list">
+                        <li><span class="level intermedio"></span> HTML & CSS</li>
+                        <li><span class="level intermedio"></span> JavaScript</li>
+                        <li><span class="level basico"></span> React</li>
+                        <li><span class="level basico"></span> Node.js</li>
+                        <li><span class="level basico"></span> Git & GitHub</li>
+                    </ul>
+                </div>
+
+                <div class="info-box full-width">
+                    <h3>Habilidades Blandas</h3>
+                    <ul class="soft-skills">
+                        <li>Trabajo en equipo</li>
+                        <li>Comunicación efectiva</li>
+                        <li>Responsabilidad</li>
+                        <li>Pensamiento Crítico</li>
+                        <li>Adaptabilidad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section-container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="carrusel-container">
+                <div class="carrusel">
+                    <div class="proyecto">
+                        <img src="/imagenes/proyecto1.png" alt="Proyecto 1">
+                        <h3>Landing Page Ficticia</h3>
+                        <p>Una página de presentación moderna y responsive para una startup ficticia, diseñada con HTML, CSS y JavaScript para una experiencia de usuario fluida.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn-secondary">Ver Demo</a>
+                            <a href="#" target="_blank" class="btn-secondary">Código (GitHub)</a>
+                        </div>
+                    </div>
+                    <div class="proyecto">
+                        <img src="/imagenes/proyecto2.png" alt="Proyecto 2">
+                        <h3>Portfolio Personal</h3>
+                        <p>Mi propio sitio web de portafolio, desarrollado para mostrar mis habilidades y proyectos. Accessible, responsive y con una estética moderna y profesional.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn-secondary">Ver Demo</a>
+                            <a href="#" target="_blank" class="btn-secondary">Código (GitHub)</a>
+                        </div>
+                    </div>
+                     <div class="proyecto">
+                        <img src="https://via.placeholder.com/800x400/1F2833/66FCF1?text=Próximo+Proyecto" alt="Proyecto 3">
+                        <h3>Proyecto en Desarrollo</h3>
+                        <p>Descripción de un proyecto futuro o en progreso. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn-secondary disabled">Demo Próximamente</a>
+                            <a href="#" target="_blank" class="btn-secondary disabled">Código Próximamente</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carrusel-btn prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15.41 7.41 10.83 12l4.58 4.59L14 18l-6-6 6-6z"/>
+                    </svg>
+                </button>
+
+                <button class="carrusel-btn next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section id="contacto" class="section-container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="contact-intro">¿Interesado en colaborar o simplemente saludar? No dudes en contactarme.</p>
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <i class="icon-email"></i>
+                    <h3>Email</h3>
+                    <p>claraagv54@gmail.com</p>
+                    <a href="mailto:claraagv54@gmail.com" class="btn-link">Enviar Email</a>
+                </div>
+                <div class="contact-item">
+                    <i class="icon-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>+54 342 522 4397</p>
+                    <a href="tel:+543425224397" class="btn-link">Llamar Ahora</a>
+                </div>
+                <div class="contact-item">
+                    <i class="icon-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Conectemos en LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/clara-ag%C3%BCero-a589b925b/" target="_blank" class="btn-link">Visitar Perfil</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Clara A. Agüero. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
