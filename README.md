@@ -1,4 +1,4 @@
-# Portafolio Profesional Digital - [Tu Nombre]
+# Portafolio Profesional Digital -
 
 ¡Bienvenido/a al repositorio de mi Portafolio Profesional Digital! Este proyecto es la culminación de los conocimientos y habilidades adquiridas como estudiante de Técnico Superior en Desarrollo de Software, con un enfoque en el desarrollo web.
 
