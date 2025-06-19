@@ -1,22 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Estudiante</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Portafolio - Estudiante</title> 
+    <!-- 
+        *** MODIFICAR: TÍTULO DE LA PÁGINA ***
+        Cambia el contenido de <title> para personalizar el título que aparece en la pestaña del navegador.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css"> 
+    <!-- 
+        *** MODIFICAR: FUENTES Y ESTILOS ***
+        Puedes cambiar o agregar fuentes desde Google Fonts y modificar el archivo style.css para personalizar el diseño.
+    -->
 </head>
 <body>
 
-    <header>
+    <header> 
         <div class="logo">
+            <!-- 
+                *** MODIFICAR: LOGO ***
+                Cambia el atributo src para usar tu propio logo.
+                Cambia el alt para describir tu logo.
+            -->
             <img src="./imagenes/SOLO CÓDIGO.png" alt="Logo del sitio">
         </div>
         <nav>
-            <ul>
+            <ul> 
+                <!-- 
+                    *** MODIFICAR: MENÚ DE NAVEGACIÓN ***
+                    Puedes agregar, quitar o renombrar secciones según tus necesidades.
+                -->
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#perfil">Perfil</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
@@ -25,32 +42,115 @@
         </nav>
     </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <div class="hero-content">
+    <main> 
+        <!-- 
+            *** SECCIÓN HERO / INICIO ***
+            Aquí se presenta la información principal del portafolio.
+        -->
+        <section id="inicio" class="hero"> 
+            <div class="hero-content"> 
+                <!-- 
+                    *** MODIFICAR: FOTO DE PERFIL ***
+                    Cambia src por la ruta de tu foto.
+                    Cambia alt por una descripción de tu foto.
+                -->
                 <img src="./imagenes/fotoperfil.jpg" alt="Foto de perfil de Clara A. Agüero" class="foto-personal hero-foto">
+                <!-- 
+                    *** MODIFICAR: NOMBRE ***
+                    Cambia el texto para mostrar tu nombre completo.
+                -->
                 <h1>Hola, soy Clara A. Agüero</h1>
+                <!-- 
+                    *** MODIFICAR: DESCRIPCIÓN BREVE ***
+                    Cambia el texto para describirte brevemente.
+                -->
                 <p class="hero-description">Estudiante de desarrollo web. Apasionada por el diseño UI/UX y la programación frontend, creando experiencias digitales innovadoras.</p>
+                <!-- 
+                    *** MODIFICAR: BOTÓN PRINCIPAL ***
+                    Cambia el texto o el enlace del botón si lo deseas.
+                -->
                 <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
             </div>
         </section>
 
-        <section id="perfil" class="section-container">
-            <h2 class="section-title">Mi Perfil Detallado</h2> <div class="info-grid">
-                <div class="info-box">
-                    <h3>Información Personal</h3>
-                    <p><strong>Email:</strong> claraagv54@gmail.com</p>
-                    <p><strong>Teléfono:</strong> +54 342 522 4397</p>
-                    <p><strong>Ubicación:</strong> Santa Fe, Argentina</p>
+        <!-- 
+            *** SECCIÓN PERFIL DETALLADO ***
+            Actualiza tu información personal, profesional, experiencia, educación y habilidades.
+        -->
+        <section id="perfil" class="section-container"> 
+            <h2 class="section-title">Mi Perfil Detallado</h2> 
+            <div class="info-grid"> 
+                <div class="info-personal-profesional-wrapper"> 
+                    <div class="info-box">
+                        <h3>Información Personal</h3> 
+                        <!-- 
+                            *** MODIFICAR: INFORMACIÓN DE CONTACTO ***
+                            Actualiza tu email, teléfono y ubicación.
+                        -->
+                        <p><strong>Email:</strong> claraagv54@gmail.com</p>
+                        <p><strong>Teléfono:</strong> +54 342 522 4397</p>
+                        <p><strong>Ubicación:</strong> Santa Fe, Argentina</p>
+                    </div>
+
+                    <div class="info-box"> 
+                        <h3>Información Profesional</h3>
+                        <!-- 
+                            *** MODIFICAR: DESCRIPCIÓN PROFESIONAL ***
+                            Cambia el texto para reflejar tu formación, habilidades y objetivos.
+                        -->
+                        <p>Formada en tecnologías web, con conocimientos sólidos en HTML, CSS, JavaScript y herramientas modernas de desarrollo frontend. Busco constantemente nuevas oportunidades para aplicar y expandir mis habilidades en entornos dinámicos y colaborativos.</p>
+                    </div>
+                </div>
+                <div class="info-box full-width">
+                    <h3>Experiencia Laboral</h3>
+                    <!-- 
+                        *** MODIFICAR: EXPERIENCIA LABORAL ***
+                        Agrega, quita o edita experiencias laborales según tu trayectoria.
+                    -->
+                    <div class="experience-content">
+                        <h4>Asistente de Desarrollo Web</h4>
+                        <p class="company-info">Creativa Digital | Remoto</p>
+                        <p class="dates">Julio 2022 - Diciembre 2022</p>
+                        <ul>
+                            <li>Soporte en la creación de sitios web para clientes, incluyendo maquetación básica y edición de contenido.</li>
+                            <li>Aprendizaje y aplicación de conceptos de diseño responsive.</li>
+                            <li>Participación en la revisión de código y depuración de errores menores.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="info-box">
-                    <h3>Información Profesional</h3>
-                    <p>Formada en tecnologías web, con conocimientos sólidos en HTML, CSS, JavaScript y herramientas modernas de desarrollo frontend. Busco constantemente nuevas oportunidades para aplicar y expandir mis habilidades en entornos dinámicos y colaborativos.</p>
+                <div class="info-box full-width">
+                    <h3>Educación</h3>
+                    <!-- 
+                        *** MODIFICAR: EDUCACIÓN ***
+                        Agrega tus estudios, cursos y certificaciones.
+                    -->
+                    <div class="education-content">
+                        <h4>Técnico Superior en Desarrollo de Software</h4>
+                        <p class="institution-info">Escuela Normal Superior y Superior de Comercio N° 46 Domingo Guzmán Silva</p>
+                        <p class="dates">Marzo 2023 - Actualidad</p>
+                        <ul>
+                            <li>Enfocado en programación backend con Python y desarrollo frontend con JavaScript.</li>
+                            <li>Proyectos destacados: Sistema de gestión de inventario, Aplicación web para reserva de turnos.</li>
+                        </ul>
+                    </div>
+                    <div class="education-content">
+                        <h4>Curso de Diseño UX/UI</h4>
+                        <p class="institution-info">Platzi</p>
+                        <p class="dates">Abril 2022 - Junio 2022</p>
+                        <ul>
+                            <li>Fundamentos de diseño de experiencia de usuario y diseño de interfaz.</li>
+                            <li>Creación de prototipos y wireframes.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="info-box full-width">
                     <h3>Habilidades Técnicas</h3>
+                    <!-- 
+                        *** MODIFICAR: HABILIDADES TÉCNICAS ***
+                        Agrega o edita tus habilidades técnicas y su nivel.
+                    -->
                     <ul class="tech-list">
                         <li><span class="level intermedio"></span> HTML & CSS</li>
                         <li><span class="level intermedio"></span> JavaScript</li>
@@ -62,6 +162,10 @@
 
                 <div class="info-box full-width">
                     <h3>Habilidades Blandas</h3>
+                    <!-- 
+                        *** MODIFICAR: HABILIDADES BLANDAS ***
+                        Agrega o edita tus habilidades personales.
+                    -->
                     <ul class="soft-skills">
                         <li>Trabajo en equipo</li>
                         <li>Comunicación efectiva</li>
@@ -70,13 +174,21 @@
                         <li>Adaptabilidad</li>
                     </ul>
                 </div>
-                </div>
+            </div>
         </section>
 
+        <!-- 
+            *** SECCIÓN PROYECTOS ***
+            Agrega tus proyectos destacados. Puedes duplicar el bloque .proyecto para más proyectos.
+        -->
         <section id="proyectos" class="section-container">
             <h2 class="section-title">Proyectos Destacados</h2>
             <div class="carrusel-container">
                 <div class="carrusel">
+                    <!-- 
+                        *** MODIFICAR: PROYECTO 1 ***
+                        Cambia la imagen, título, descripción y enlaces.
+                    -->
                     <div class="proyecto">
                         <img src="./imagenes/proyecto1.png" alt="Proyecto 1">
                         <h3>Landing Page Ficticia</h3>
@@ -86,6 +198,9 @@
                             <a href="#" target="_blank" class="btn-secondary">Código (GitHub)</a>
                         </div>
                     </div>
+                    <!-- 
+                        *** MODIFICAR: PROYECTO 2 ***
+                    -->
                     <div class="proyecto">
                         <img src="./imagenes/proyecto2.png" alt="Proyecto 2">
                         <h3>Portfolio Personal</h3>
@@ -95,6 +210,10 @@
                             <a href="#" target="_blank" class="btn-secondary">Código (GitHub)</a>
                         </div>
                     </div>
+                    <!-- 
+                        *** MODIFICAR: PROYECTO 3 ***
+                        Puedes dejarlo como "En desarrollo" o agregar un nuevo proyecto.
+                    -->
                     <div class="proyecto">
                         <img src="./imagenes/proyecto3.webp" alt="Proyecto 3">
                         <h3>Proyecto en Desarrollo</h3>
@@ -105,6 +224,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- 
+                    Botones para navegar el carrusel de proyectos.
+                -->
                 <button class="carrusel-btn prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M15.41 7.41 10.83 12l4.58 4.59L14 18l-6-6 6-6z"/>
@@ -119,6 +241,10 @@
             </div>
         </section>
 
+        <!-- 
+            *** SECCIÓN CONTACTO ***
+            Actualiza tus datos de contacto y enlaces a redes sociales.
+        -->
         <section id="contacto" class="section-container">
             <h2 class="section-title">Contacto</h2>
             <p class="contact-intro">¿Interesado en colaborar o simplemente saludar? No dudes en contactarme.</p>
@@ -126,18 +252,30 @@
                 <div class="contact-item">
                     <i class="icon-email"></i>
                     <h3>Email</h3>
+                    <!-- 
+                        *** MODIFICAR: EMAIL ***
+                        Cambia el correo y el enlace mailto.
+                    -->
                     <p>claraagv54@gmail.com</p>
                     <a href="mailto:claraagv54@gmail.com" class="btn-link">Enviar Email</a>
                 </div>
                 <div class="contact-item">
                     <i class="icon-phone"></i>
                     <h3>Teléfono</h3>
+                    <!-- 
+                        *** MODIFICAR: TELÉFONO ***
+                        Cambia el número y el enlace tel.
+                    -->
                     <p>+54 342 522 4397</p>
                     <a href="tel:+543425224397" class="btn-link">Llamar Ahora</a>
                 </div>
                 <div class="contact-item">
                     <i class="icon-linkedin"></i>
                     <h3>LinkedIn</h3>
+                    <!-- 
+                        *** MODIFICAR: LINKEDIN ***
+                        Cambia el enlace a tu perfil de LinkedIn.
+                    -->
                     <p>Conectemos en LinkedIn</p>
                     <a href="https://www.linkedin.com/in/clara-ag%C3%BCero-a589b925b/" target="_blank" class="btn-link">Visitar Perfil</a>
                 </div>
@@ -146,9 +284,17 @@
     </main>
 
     <footer>
+        <!-- 
+            *** MODIFICAR: PIE DE PÁGINA ***
+            Cambia el nombre y el año si es necesario.
+        -->
         <p>&copy; 2024 Clara A. Agüero. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- 
+        *** MODIFICAR: SCRIPTS ***
+        Puedes agregar o quitar scripts según lo que necesite tu portafolio.
+    -->
     <script src="script.js"></script>
 </body>
 </html>
