@@ -190,9 +190,10 @@ nav a:hover::after {
 /* Hero Section */
 .hero {
     display: flex;
+    flex-direction: column; /* Cambiado a columna para apilar elementos */
     justify-content: center;
     align-items: center;
-    height: 90vh; /* Adjust as needed */
+    min-height: 90vh; /* Usar min-height para asegurar que tenga suficiente espacio */
     text-align: center;
     background: radial-gradient(circle at center, rgba(102, 252, 241, 0.08) 0%, transparent 50%), var(--primary-bg);
     position: relative;
@@ -203,19 +204,39 @@ nav a:hover::after {
 .hero-content {
     max-width: 800px;
     z-index: 2;
+    display: flex; /* Para controlar la alineación de los elementos internos */
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Espacio entre los elementos del hero */
 }
+
+.hero-foto {
+    width: 200px; /* Tamaño de la foto de perfil en el hero */
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(102, 252, 241, 0.6); /* Sombra más pronunciada */
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.hero-foto:hover {
+    transform: scale(1.08);
+}
+
 
 .hero-content h1 {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Ajustado el margen */
     color: var(--heading-color);
     line-height: 1.2;
 }
 
-.hero-content p {
+.hero-description { /* Nueva clase para la descripción en el hero */
     font-size: 1.3rem;
     color: var(--text-color);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem; /* Ajustado el margen */
 }
 
 /* Profile Section */
@@ -225,7 +246,8 @@ nav a:hover::after {
     border-bottom: 2px solid var(--border-color);
 }
 
-.perfil-overview {
+/* Eliminamos o adaptamos .perfil-overview si ya no es necesario aquí */
+/* .perfil-overview {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -233,12 +255,13 @@ nav a:hover::after {
     text-align: center;
     margin-bottom: 3rem;
     padding: 1.5rem;
-    background-color: rgba(31, 40, 51, 0.7); /* Slightly lighter secondary bg */
+    background-color: rgba(31, 40, 51, 0.7);
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 
-.foto-personal {
+/* La foto-personal original ahora es .hero-foto en la sección hero */
+/* .foto-personal {
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -246,13 +269,14 @@ nav a:hover::after {
     border: 4px solid var(--accent-color);
     box-shadow: 0 0 25px rgba(102, 252, 241, 0.4);
     transition: transform 0.3s ease;
-}
+} */
 
-.foto-personal:hover {
+/* .foto-personal:hover {
     transform: scale(1.05);
-}
+} */
 
-.datos h2 {
+/* Si mantienes los "datos" en #perfil, asegúrate de que no dupliquen info del hero */
+/* .datos h2 {
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-bottom: 0.5rem;
@@ -262,7 +286,7 @@ nav a:hover::after {
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
-}
+} */
 
 .info-grid {
     display: grid;
@@ -353,87 +377,66 @@ nav a:hover::after {
 }
 
 
-/* Projects Section */
-#proyectos {
-    background-color: var(--primary-bg);
-}
+/* style.css - SOLO LAS REGLAS DEL CARRUSEL */
 
+/* Contenedor principal del carrusel */
 .carrusel-container {
-    position: relative;
-    width: 100%;
-    max-width: 1000px; /* Adjust max-width for the carousel display */
-    margin: 2rem auto;
-    padding: 0 40px; /* Space for buttons */
-    box-sizing: border-box;
+    position: relative; /* Necesario para posicionar los botones */
+    max-width: 1000px; /* Ancho máximo del carrusel visible */
+    margin: 4rem auto; /* Centrar y darle espacio */
+    padding: 0 50px; /* Espacio para los botones de navegación */
+    box-sizing: border-box; /* Incluir padding en el width */
+    overflow: hidden; /* ¡IMPORTANTE! Oculta los elementos fuera de vista */
+    border-radius: 15px; /* Bordes redondeados para el contenedor */
+    background-color: var(--secondary-bg); /* Fondo del área visible del carrusel */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra suave */
 }
 
+/* El riel del carrusel que contendrá los proyectos y se moverá */
 .carrusel {
-    display: flex;
-    overflow: hidden; /* Hide overflow to allow only one project at a time */
-    scroll-snap-type: x mandatory; /* Enable scroll snapping */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    scroll-behavior: smooth; /* Smooth scroll transition */
-    padding-bottom: 10px; /* Space for scrollbar */
+    display: flex; /* Para que los proyectos se alineen en una fila */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento */
+    gap: 2rem; /* Espacio entre cada proyecto. Esto es 32px (16px * 2) */
+    /* Asegúrate de que este 'gap' no se anule en otro lugar */
 }
 
+/* Cada proyecto individual dentro del carrusel */
 .proyecto {
-    flex: 0 0 100%; /* Each project takes 100% width of the container */
-    max-width: 100%;
-    background: var(--secondary-bg);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    padding: 2.5rem;
+    flex: 0 0 100%; /* ¡IMPORTANTE! Cada proyecto ocupa el 100% del ancho disponible */
+                   /* flex-grow: 0 (no crecer), flex-shrink: 0 (no encoger), flex-basis: 100% (ancho inicial) */
+    max-width: 100%; /* Asegura que no se exceda el ancho del padre */
+    box-sizing: border-box; /* Incluir padding/border en el 100% */
+    padding: 2.5rem; /* Relleno dentro de cada tarjeta de proyecto */
     text-align: center;
-    display: flex;
+    background-color: var(--primary-bg); /* Fondo de cada tarjeta de proyecto */
+    border-radius: 10px; /* Bordes redondeados para cada tarjeta */
+    display: flex; /* Usamos flexbox para centrar el contenido verticalmente */
     flex-direction: column;
     align-items: center;
-    margin-right: 2rem; /* Space between projects */
-    scroll-snap-align: start; /* Snap to the start of each project */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center; /* Centrar contenido verticalmente */
+    min-height: 450px; /* Altura mínima para que las tarjetas se vean uniformes, ajusta si es necesario */
+    border: 1px solid var(--border-color); /* Borde sutil */
 }
 
-.proyecto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(102, 252, 241, 0.2);
-}
-
+/* Estilos para las imágenes dentro de los proyectos */
 .proyecto img {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--border-color);
+    width: 100%; /* La imagen ocupa el 100% del ancho de su tarjeta padre */
+    max-width: 700px; /* Pero no más de 700px */
+    height: 350px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Recorta la imagen para que cubra el espacio sin distorsionarse */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    margin-bottom: 1.5rem; /* Espacio debajo de la imagen */
+    border: 1px solid var(--border-color); /* Borde sutil */
 }
 
-.proyecto h3 {
-    font-size: 2.2rem;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-}
-
-.proyecto p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
+/* Estilos para los botones de navegación */
 .carrusel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(31, 40, 51, 0.8);
+    background-color: rgba(31, 40, 51, 0.7); /* Fondo semi-transparente */
     color: var(--accent-color);
-    border: none;
+    border: 2px solid var(--accent-color);
     font-size: 2.5rem;
     width: 50px;
     height: 50px;
@@ -441,29 +444,55 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
+    z-index: 10; /* Asegura que estén por encima de todo */
+    border-radius: 50%; /* Botones circulares */
     transition: all 0.3s ease;
     box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
-}
-
-.carrusel-btn svg {
-    width: 28px;
-    height: 28px;
 }
 
 .carrusel-btn:hover {
     background-color: var(--accent-color);
     color: var(--primary-bg);
-    box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
+    box-shadow: 0 0 25px rgba(102, 252, 241, 0.6);
 }
 
-.prev {
-    left: 0;
+.carrusel-btn.prev {
+    left: 10px; /* Posición del botón anterior */
 }
 
-.next {
-    right: 0;
+.carrusel-btn.next {
+    right: 10px; /* Posición del botón siguiente */
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 768px) {
+    .carrusel-container {
+        padding: 0 10px; /* Menos padding en móviles para los botones */
+    }
+    .carrusel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+    .carrusel-btn.prev {
+        left: 0px;
+    }
+    .carrusel-btn.next {
+        right: 0px;
+    }
+    .proyecto {
+        padding: 1.5rem; /* Menos padding interno en la tarjeta */
+        min-height: 400px; /* Ajuste de altura mínima si es necesario */
+    }
+    .proyecto img {
+        height: 250px; /* Altura de imagen en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .proyecto img {
+        height: 200px; /* Altura de imagen en móviles más pequeños */
+    }
 }
 
 /* Contact Section */
@@ -542,7 +571,7 @@ footer {
     .hero-content h1 {
         font-size: 3.5rem;
     }
-    .hero-content p {
+    .hero-description { /* Para la descripción en el hero */
         font-size: 1.15rem;
     }
     .section-title {
@@ -568,22 +597,15 @@ footer {
         height: auto;
         padding: 6rem 1rem;
     }
+    .hero-foto { /* Ajustar tamaño de la foto en pantallas más pequeñas */
+        width: 160px;
+        height: 160px;
+    }
     .hero-content h1 {
         font-size: 2.8rem;
     }
-    .hero-content p {
+    .hero-description { /* Para la descripción en el hero */
         font-size: 1rem;
-    }
-    .perfil-overview {
-        flex-direction: column;
-        text-align: center;
-    }
-    .datos {
-        margin-left: 0;
-        margin-top: 1.5rem;
-    }
-    .datos h2 {
-        font-size: 2rem;
     }
     .info-grid {
         grid-template-columns: 1fr;
@@ -621,10 +643,14 @@ footer {
     .section-title {
         font-size: 1.8rem;
     }
+    .hero-foto { /* Ajustar tamaño de la foto en pantallas más pequeñas */
+        width: 120px;
+        height: 120px;
+    }
     .hero-content h1 {
         font-size: 2.2rem;
     }
-    .hero-content p {
+    .hero-description { /* Para la descripción en el hero */
         font-size: 0.9rem;
     }
     .btn-primary, .btn-secondary {
@@ -637,13 +663,6 @@ footer {
     }
     nav a {
         font-size: 1rem;
-    }
-    .foto-personal {
-        width: 140px;
-        height: 140px;
-    }
-    .datos h2 {
-        font-size: 1.8rem;
     }
     .info-box h3 {
         font-size: 1.6rem;
